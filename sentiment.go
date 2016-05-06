@@ -2,6 +2,7 @@ package bosonnlp
 
 type SentimentAnalysisResponse [][]float32
 
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) SentimentAnalysis(content []string, industry ...string) (SentimentAnalysisResponse, error) {
 	var response SentimentAnalysisResponse
 	endpoint := "sentiment/analysis"

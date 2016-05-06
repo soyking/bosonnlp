@@ -1,6 +1,7 @@
 package bosonnlp
 
-const EntityType = map[string]string{
+// EntityType from NerAnalysis
+var EntityType = map[string]string{
 	"time":         "时间",
 	"location":     "地点",
 	"person_name":  "人名",
@@ -16,12 +17,15 @@ type Entity struct {
 	EntityType string
 }
 type NerAnalysisResponse []struct {
-	RawEntity [][]interface{} `json:"entity" bson:"entity"` // json unmarshal data
-	Entity    []Entity        // converted data
-	Tag       []string        `json:"tag" bson:"tag"`
-	Word      []string        `json:"word" bson:"word"`
+	// json unmarshal data
+	RawEntity [][]interface{} `json:"entity" bson:"entity"`
+	// converted data
+	Entity []Entity
+	Tag    []string `json:"tag" bson:"tag"`
+	Word   []string `json:"word" bson:"word"`
 }
 
+// doc: http://docs.bosonnlp.com/ner.html
 func (c *BosonNLPClient) NerAnalysis(content []string) (NerAnalysisResponse, error) {
 	var response NerAnalysisResponse
 	err := c.post("ner/analysis", nil, content, &response)
