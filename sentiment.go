@@ -18,26 +18,31 @@ func (c *BosonNLPClient) SentimentAnalysis(content []string, industry ...string)
 }
 
 // 汽车
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) AutoSentimentAnalysis(content []string) (SentimentAnalysisResponse, error) {
 	return c.SentimentAnalysis(content, "auto")
 }
 
 // 厨具
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) KitchenSentimentAnalysis(content []string) (SentimentAnalysisResponse, error) {
 	return c.SentimentAnalysis(content, "kitchen")
 }
 
 // 餐饮
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) FoodSentimentAnalysis(content []string) (SentimentAnalysisResponse, error) {
 	return c.SentimentAnalysis(content, "food")
 }
 
 // 新闻
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) NewsSentimentAnalysis(content []string) (SentimentAnalysisResponse, error) {
 	return c.SentimentAnalysis(content, "news")
 }
 
 // 微博
+// doc: http://docs.bosonnlp.com/sentiment.html
 func (c *BosonNLPClient) WeiboAutoSentimentAnalysis(content []string) (SentimentAnalysisResponse, error) {
 	return c.SentimentAnalysis(content, "weibo")
 }

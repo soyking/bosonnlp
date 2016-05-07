@@ -1,7 +1,9 @@
 package bosonnlp
 
 // _id 该cluster最具代表性的文档
+//
 // num 该cluster包含的文档数目
+//
 // list 所有属于该cluster的文档 _id
 type ClusterResponse []struct {
 	ID   string   `json:"_id"`
@@ -10,8 +12,11 @@ type ClusterResponse []struct {
 }
 
 // query:
+//
 // alpha (0, 1] 默认 0.8 调节聚类最大cluster大小
+//
 // beta (0, 1) 默认 0.45 调节聚类平均cluster大小
+//
 // doc: http://docs.bosonnlp.com/cluster.html
 func (c *BosonNLPClient) Cluster(task *CommonTask, query ...map[string]string) (ClusterResponse, error) {
 	taskID, err := c.ClusterPush(task)

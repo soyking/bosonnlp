@@ -39,6 +39,7 @@ func (t *Task) Check() {
 	}
 }
 
+// generate id, length is 8
 func GenerateID() string {
 	b := make([]byte, 4)
 	rand.Read(b)

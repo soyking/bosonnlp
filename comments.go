@@ -1,8 +1,11 @@
 package bosonnlp
 
 // _id 该典型意见的标示
+//
 // opinion 典型意见文本
+//
 // num 该典型意见类似的意见个数
+//
 // list 所有属于该典型意见的评论，其中str为意见，int为意见的来源评论ID
 type CommentsResponse []struct {
 	ID     int        `json:"_id"`
@@ -12,8 +15,11 @@ type CommentsResponse []struct {
 }
 
 // query:
+//
 // alpha (0, 1] 默认 0.8 调节聚类最大cluster大小
+//
 // beta (0, 1) 默认 0.45 调节聚类平均cluster大小
+//
 // doc: http://docs.bosonnlp.com/comments.html
 func (c *BosonNLPClient) Comments(task *CommonTask, query ...map[string]string) (CommentsResponse, error) {
 	taskID, err := c.CommentsPush(task)
