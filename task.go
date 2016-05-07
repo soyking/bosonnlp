@@ -7,8 +7,8 @@ import (
 )
 
 type TaskPushResponse struct {
-	Count  int    `json:"count" bson:"count"`
-	TaskID string `json:"task_id" bson:"task_id"`
+	Count  int    `json:"count"`
+	TaskID string `json:"task_id"`
 }
 
 const (
@@ -23,14 +23,14 @@ const (
 )
 
 type TaskStatus struct {
-	TaskID string `json:"_id" bson:"_id"`
-	Count  int    `json:"count" bson:"count"`
-	Status string `json:"status" bson:"status"`
+	TaskID string `json:"_id"`
+	Count  int    `json:"count"`
+	Status string `json:"status"`
 }
 
 type Task struct {
-	ID   string `json:"_id" bson:"_id"`
-	Text string `json:"text" bson:"text"`
+	ID   string `json:"_id"`
+	Text string `json:"text"`
 }
 
 func (t *Task) Check() {

@@ -10,8 +10,8 @@ var TimeType = map[string]string{
 }
 
 type TimeAnalysisResponse struct {
-	Timestamp string `json:"timestamp" bson:"timestamp"`
-	Type      string `json:"type" bson:"type"`
+	Timestamp string `json:"timestamp"`
+	Type      string `json:"type"`
 }
 
 // doc: http://docs.bosonnlp.com/time.html

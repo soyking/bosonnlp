@@ -4,9 +4,9 @@ package bosonnlp
 // num 该cluster包含的文档数目
 // list 所有属于该cluster的文档 _id
 type ClusterResponse []struct {
-	ID   string   `json:"_id" bson:"_id"`
-	Num  int      `json:"num" bson:"num"`
-	List []string `json:"list" bson:"list"`
+	ID   string   `json:"_id"`
+	Num  int      `json:"num"`
+	List []string `json:"list"`
 }
 
 // query:

@@ -5,10 +5,10 @@ package bosonnlp
 // num 该典型意见类似的意见个数
 // list 所有属于该典型意见的评论，其中str为意见，int为意见的来源评论ID
 type CommentsResponse []struct {
-	ID     int        `json:"_id" bson:"_id"`
-	Option string     `json:"option" bson:"option"`
-	Num    int        `json:"num" bson:"num"`
-	List   [][]string `json:"list" bson:"list"`
+	ID     int        `json:"_id"`
+	Option string     `json:"option"`
+	Num    int        `json:"num"`
+	List   [][]string `json:"list"`
 }
 
 // query:

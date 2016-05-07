@@ -75,8 +75,8 @@ var TagType = map[string]string{
 }
 
 type TagAnalysisResponse []struct {
-	Tag  []string `json:"tag" bson:"tag"`
-	Word []string `json:"word" bson:"word"`
+	Tag  []string `json:"tag"`
+	Word []string `json:"word"`
 }
 
 // doc: http://docs.bosonnlp.com/tag.html

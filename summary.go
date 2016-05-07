@@ -1,10 +1,10 @@
 package bosonnlp
 
 type SummaryAnalysisRequest struct {
-	Titile     string  `json:"title" bson:"title"`
-	Content    string  `json:"content" bson:"content"`
-	Percentage float64 `json:"percentage" bson:"percentage"`
-	NotExceed  int     `json:"not_exceed" bson:"not_exceed"`
+	Titile     string  `json:"title"`
+	Content    string  `json:"content"`
+	Percentage float64 `json:"percentage"`
+	NotExceed  int     `json:"not_exceed"`
 }
 
 type SummaryAnalysisResponse string

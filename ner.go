@@ -18,11 +18,11 @@ type Entity struct {
 }
 type NerAnalysisResponse []struct {
 	// json unmarshal data
-	RawEntity [][]interface{} `json:"entity" bson:"entity"`
+	RawEntity [][]interface{} `json:"entity"`
 	// converted data
 	Entity []Entity
-	Tag    []string `json:"tag" bson:"tag"`
-	Word   []string `json:"word" bson:"word"`
+	Tag    []string `json:"tag"`
+	Word   []string `json:"word"`
 }
 
 // doc: http://docs.bosonnlp.com/ner.html

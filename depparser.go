@@ -27,10 +27,10 @@ var RoleType = map[string]string{
 }
 
 type DepparserAnalysisResponse []struct {
-	Role []string `json:"role" bson:"role"`
-	Head []int    `json:"head" bson:"head"`
-	Tag  []string `json:"tag" bson:"tag"`
-	Word []string `json:"word" bson:"word"`
+	Role []string `json:"role"`
+	Head []int    `json:"head"`
+	Tag  []string `json:"tag"`
+	Word []string `json:"word"`
 }
 
 // doc: http://docs.bosonnlp.com/depparser.html

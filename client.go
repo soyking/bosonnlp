@@ -73,7 +73,7 @@ func (c *BosonNLPClient) handleRequest(request *http.Request, query map[string]s
 }
 
 type BosonNLPErrResponse struct {
-	Status int `json:"status" bson:"status"`
+	Status int `json:"status"`
 }
 
 func (c *BosonNLPClient) errCheck(respBytes []byte) error {
