@@ -50,7 +50,6 @@ func (c *BosonNLPClient) handleRequest(request *http.Request, query map[string]s
 		request.URL.RawQuery = values.Encode()
 	}
 	request.Header.Set("X-token", c.Token)
-	println(request.URL.String())
 
 	resp, err := c.httpClient.Do(request)
 	if err != nil {
@@ -63,7 +62,6 @@ func (c *BosonNLPClient) handleRequest(request *http.Request, query map[string]s
 	if err != nil {
 		return err
 	}
-	println(string(respBytes))
 
 	err = json.Unmarshal(respBytes, response)
 	if err != nil {
