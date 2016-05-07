@@ -159,28 +159,26 @@ func TestGenerateTaskID(t *testing.T) {
 }
 
 func TestBosonNLPClient_Cluster(t *testing.T) {
-	task := Task{
-		ID:   "abc",
-		Text: "#新闻追踪#：【冀中星被移送检察院审查起诉】首都机场公安分局对冀中星爆炸案侦查终结，目前已移送朝阳检察院审查起诉。7月20日18时24分，冀中星在首都机场T3航站楼B口外引爆自制炸药。案发当天除冀中星左手腕因被炸截肢外，无其他人伤亡。7月29日，冀中星因涉嫌爆炸罪被批捕。http://t.cn/zQHjr0S",
+	text1 := "#新闻追踪#：【冀中星被移送检察院审查起诉】首都机场公安分局对冀中星爆炸案侦查终结，目前已移送朝阳检察院审查起诉。7月20日18时24分，冀中星在首都机场T3航站楼B口外引爆自制炸药。案发当天除冀中星左手腕因被炸截肢外，无其他人伤亡。7月29日，冀中星因涉嫌爆炸罪被批捕。http://t.cn/zQHjr0S"
+	text2 := "#豫广微新闻#【首都机场爆炸案嫌犯冀中星 移送检方审查起诉】 据报道，首都机场公安分局对冀中星爆炸案侦查终结，目前已移送朝阳检察院审查起诉。7月20日，山东籍男子冀中星在首都机场T3航站楼引爆自制炸药，案发当天除冀中星左手腕因被炸截肢外，无其他人伤亡"
+	task := client.NewCommonTask()
+	for i := 0; i < 20; i++ {
+		task.AddText(text1)
+		task.AddText(text2)
 	}
-	tasks := []Task{}
-	for i := 0; i < 100; i++ {
-		tasks = append(tasks, task)
-	}
-	println(len(tasks))
 
-	err := client.Cluster(tasks)
+	resp, err := client.Cluster(task)
 	if err != nil {
 		t.Fatal(err)
 	} else {
-		t.Logf("ok")
+		t.Logf("%v", resp)
 	}
 }
 
 func TestBosonNLPClient_Comments(t *testing.T) {
 	text1 := "#新闻追踪#：【冀中星被移送检察院审查起诉】首都机场公安分局对冀中星爆炸案侦查终结，目前已移送朝阳检察院审查起诉。7月20日18时24分，冀中星在首都机场T3航站楼B口外引爆自制炸药。案发当天除冀中星左手腕因被炸截肢外，无其他人伤亡。7月29日，冀中星因涉嫌爆炸罪被批捕。http://t.cn/zQHjr0S"
 	text2 := "#豫广微新闻#【首都机场爆炸案嫌犯冀中星 移送检方审查起诉】 据报道，首都机场公安分局对冀中星爆炸案侦查终结，目前已移送朝阳检察院审查起诉。7月20日，山东籍男子冀中星在首都机场T3航站楼引爆自制炸药，案发当天除冀中星左手腕因被炸截肢外，无其他人伤亡"
-	task := client.NewCommentsTask()
+	task := client.NewCommonTask()
 	task.AddText(text1)
 	task.AddText(text2)
 
@@ -188,6 +186,6 @@ func TestBosonNLPClient_Comments(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	} else {
-		t.Logf("%v",resp)
+		t.Logf("%v", resp)
 	}
 }

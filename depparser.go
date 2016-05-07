@@ -13,7 +13,7 @@ var RoleType = map[string]string{
 	"PMOD": "介词修饰",
 	"NMOD": "名词修饰",
 	"VMOD": "动词修饰",
-	"VRD":  "动结式（第二动词为第一动词结果）",
+	"VRD":  "动结式",
 	"DEG":  "连接词“的”结构",
 	"DEV":  "“地”结构",
 	"LC":   "位置词结构",
