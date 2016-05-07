@@ -15,8 +15,8 @@ type TimeAnalysisResponse struct {
 }
 
 // doc: http://docs.bosonnlp.com/time.html
-func (c *BosonNLPClient) TimeAnalysis(pattern string) (TimeAnalysisResponse, error) {
+func (c *BosonNLPClient) TimeAnalysis(pattern string) (*TimeAnalysisResponse, error) {
 	var response TimeAnalysisResponse
 	err := c.post("time/analysis", map[string]string{"pattern": pattern}, nil, &response)
-	return response, err
+	return &response, err
 }
